@@ -39,6 +39,12 @@ pub enum Rank {
 fn main() {
     println!("Welcome to Blackjack!");
 
+    // Set up the player's chips
+    let mut player_chips = Chips {
+        total: 100,
+        bet: 0,
+    };
+
     loop {
         let mut deck = Deck {
             cards: vec![]
@@ -61,12 +67,6 @@ fn main() {
         };
         dealer_hand.add_card(deck.deal());
         dealer_hand.add_card(deck.deal());
-
-        // Set up the player's chips
-        let mut player_chips = Chips {
-            total: 100,
-            bet: 0,
-        };
 
         // Prompt the player for their bet
         take_bet(&mut player_chips);
